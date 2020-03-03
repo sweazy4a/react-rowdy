@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Grid } from 'react-bootstrap';
 import SubTotal from './components/Subtotal/Subtotal';
+import ProductInfo from './components/ProductInfo/ProductInfo';
+import Shipping from './components/Shipping/Shipping';
 import PickupSavings from './components/PickupSavings/PickupSavings';
 import TaxesFees from './components/TaxesFees/TaxesFees';
 import EstimatedTotal from './components/EstimatedTotal/EstimatedTotal';
@@ -12,18 +14,35 @@ import './App.css';
 import { connect } from 'react-redux';
 import { handleChange } from './actions/promoCodeActions';
 
+
+
+
 class App extends Component {
+
+
+
+toggleDiv = () => {
+    const { show } = this.state;
+    this.setState( { show : !show } )
+}
+
+
+
   constructor(props) {
     super(props);
-
+    this.state = { show : true };
+    
+    this.toggleDiv = this.toggleDiv.bind(this)
+    
     this.state = {
-      total: 100.0,
+      total: 12.99,
       taxes: 0,
       pickupSavings: -3.85,
       estimatedTotal: 0,
       disablePromoButton: false
     };
   }
+
 
   componentDidMount = () => {
     this.setState(
@@ -50,11 +69,28 @@ class App extends Component {
     }
   };
 
+
+  
+
+
+
   render() {
     return (
+
+  
+      
+// First step 
+
+      // Second step
       <div className="container">
-        <Grid className="purchase-card">
+
+ 
+
+
+          <Grid className="second-step purchase-card">
+          <h1>Shopping cart</h1>
           <SubTotal price={this.state.total.toFixed(2)} />
+          <Shipping/>
           <PickupSavings price={this.state.pickupSavings} />
           <TaxesFees taxes={this.state.taxes.toFixed(2)} />
           <hr />
@@ -66,7 +102,17 @@ class App extends Component {
             isDisabled={this.state.disablePromoButton}
           />
         </Grid>
-      </div>
+
+        <Grid className="purchase-card">
+   
+        <ProductInfo/>
+          <button class="btn-purchase">Purchase {this.state.total.toFixed(2)}$</button>
+         </Grid>
+        </div>
+
+           
+
+
     );
   }
 }
@@ -75,6 +121,9 @@ const mapStateToProps = state => ({
   promoCode: state.promoCode.value
 });
 
+
+
 export default connect(mapStateToProps, {
   handleChange
 })(App);
+

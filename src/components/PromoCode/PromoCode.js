@@ -47,7 +47,7 @@ class PromoCodeDiscount extends Component {
             <Well>
               <Row className="show-grid">
                 <Col md={12}>
-                  <Form>
+                  <Form className="col-md-12">
                     <FormGroup controlId="formInlineName">
                       <ControlLabel>Promo Code</ControlLabel>{' '}
                       <FormControl
@@ -57,10 +57,10 @@ class PromoCodeDiscount extends Component {
                         onChange={this.handleChange}
                       />
                     </FormGroup>{' '}
-                    <Button
+                    <Button 
                       block
                       bsStyle="success"
-                      className="btn-round"
+                      className="col-md-3 btn-round"
                       // type="submit"
                       disabled={this.props.isDisabled}
                       onClick={this.props.giveDiscount}

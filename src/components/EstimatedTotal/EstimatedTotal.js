@@ -6,9 +6,9 @@ export default class EstimatedTotal extends Component {
     return (
       <Row className="show-grid">
         <Col md={6}>
-          <h2>Est. total</h2>
+          <h2>Total</h2>
         </Col>
-        <Col md={6}>
+        <Col md={6} className="txt-right">
           <h2>{`$${this.props.price}`}</h2>
         </Col>
       </Row>

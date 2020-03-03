@@ -32,10 +32,10 @@ export default class PickupSavings extends Component {
       <Row className="show-grid">
         <Col md={6}>
           <OverlayTrigger placement="bottom" overlay={tooltip}>
-            <div style={styles.pickupSavings}>Pickup Savings</div>
+            <div> Pickup Savings </div>
           </OverlayTrigger>
         </Col>
-        <Col style={styles.totalSavings} md={6}>{`$${this.props.price}`}</Col>
+        <Col style={styles.totalSavings} md={6} className="txt-right">{`$${this.props.price}`}</Col>
       </Row>
     );
   }

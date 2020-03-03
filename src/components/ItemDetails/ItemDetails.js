@@ -28,14 +28,13 @@ export default class ItemDetails extends Component {
                   <img
                     width={100}
                     height={100}
-                    src="https://i5.walmartimages.com/asr/e73e1252-642c-4473-93ea-fd3b564a7027_1.3e81ea58fa3042452fe185129a4a865f.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff"
+                    src="https://i.ibb.co/f00mchM/product-1.png"
                     alt="thumbnail"
                   />
                 </Media.Left>
                 <Media.Body>
                   <p>
-                    Essentials by OFM ESS-3085 Racing Style Leather Gaming
-                    Chair, Red
+                   Lorem lol ipsum ;)
                   </p>
                   <Row className="show-grid">
                     <Col md={6}>
